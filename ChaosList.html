@@ -25,7 +25,6 @@
             
             #item {
                 margin: auto;
-                height: 200px;
                 width: 100%;
                 background-color: black;
                 font-size: 20px;
@@ -38,7 +37,7 @@
                 width: 300px;
                 background-color: black;
                 font-size: 25;
-                padding-top: 70px;
+                padding-top: 15px;
             }
             
             #buttons {
@@ -1024,8 +1023,13 @@
             var msg = "Total:";
             
             function takeUncommon() { 
-                var rand = uncommon[Math.floor(Math.random()  * uncommon.length)];
-                document.getElementById("item").innerHTML = rand;
+                var total = uncommon.length;
+                var num = parseInt(document.getElementById("number").value);
+                var msg = "";
+                for (i=0; i < num; i++) {
+                    msg += uncommon[Math.floor(Math.random()  * total)] + "<br>";
+                }
+                document.getElementById("item").innerHTML = msg;
             }
             
             function displayTotalUncommon() {
@@ -1034,8 +1038,13 @@
             }
                    
             function takeChaos() { 
-                var rand = chaos[Math.floor(Math.random()  * chaos.length)];
-                document.getElementById("item").innerHTML = rand;
+                var total = chaos.length;
+                var num = parseInt(document.getElementById("number").value);
+                var msg = "";
+                for (i=0; i < num; i++) {
+                    msg += chaos[Math.floor(Math.random()  * total)] + "<br>";
+                }
+                document.getElementById("item").innerHTML = msg;
             }
             
             function displayTotal() {
@@ -1059,8 +1068,13 @@
             } 
             
             function takeRare() { 
-                var rand = rare[Math.floor(Math.random()  * rare.length)];
-                document.getElementById("item").innerHTML = rand;
+                var total = rare.length;
+                var num = parseInt(document.getElementById("number").value);
+                var msg = "";
+                for (i=0; i < num; i++) {
+                    msg += rare[Math.floor(Math.random()  * total)] + "<br>";
+                }
+                document.getElementById("item").innerHTML = msg;
             }
             
             function displayTotalRare() {
@@ -1069,8 +1083,13 @@
             } 
             
             function takeVeryRare() { 
-                var rand = veryRare[Math.floor(Math.random()  * veryRare.length)];
-                document.getElementById("item").innerHTML = rand;
+                var total = veryRare.length;
+                var num = parseInt(document.getElementById("number").value);
+                var msg = "";
+                for (i=0; i < num; i++) {
+                    msg += veryRare[Math.floor(Math.random()  * total)] + "<br>";
+                }
+                document.getElementById("item").innerHTML = msg;
             }
             
             function displayTotalVeryRare() {
@@ -1088,31 +1107,26 @@
         
         <div id="buttons">
             <div class="buttonPair"><label>Number: </label><input type="number" id="number" value="12"></div>
-            <div class="buttonPair">
+            <div id="Chaos" class="buttonPair">
                 <button class="bttn" onclick="takeChaos()">Chaos Button</button>
                 <button class="bttn" onclick="displayTotal()">Total</button>
             </div>
-            <div class="buttonPair">
+            <div id="Uncommon" class="buttonPair">
                 <button class="bttn" onclick="takeUncommon()">Uncommon</button>
                 <button class="bttn" onclick="displayTotalUncommon()">Total Uncommon</button>
             </div>
-            <div class="buttonPair">
+            <div id="Rare" class="buttonPair">
                 <button class="bttn" onclick="takeRare()">Rare</button>
                 <button class="bttn" onclick="displayTotalRare()">Total Rare</button>
             </div>
-            <div class="buttonPair">
+            <div id="veryRare" class="buttonPair">
                 <button class="bttn" onclick="takeVeryRare()">Very Rare</button>
                 <button class="bttn" onclick="displayTotalVeryRare()">Total Very Rare</button>
             </div>
-            <div class="buttonPair">
+            <div id="Mundane" class="buttonPair">
                 <button class="bttn" onclick="takeMundane()">Mundane Items</button>
                 <button class="bttn" onclick="displayTotalMundane()"> Total Mundane </button>
             </div>
-        </div>
-        
-        
-        
+        </div>    
     </body>
-    
-
 </html>
